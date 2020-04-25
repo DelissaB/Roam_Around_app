@@ -1,0 +1,5 @@
+# @styles.map do |style|
+#   {
+#     trip_name: trip_name.id,
+#   }
+# end
