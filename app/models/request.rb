@@ -1,4 +1,4 @@
 class Request < ApplicationRecord
-  belongs_ to trip_styles
-  belongs_to :user
+  #   belongs_to :trip_styles
+  #   belongs_to :user
 end

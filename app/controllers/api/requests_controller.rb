@@ -5,10 +5,9 @@ class Api::RequestsController < ApplicationController
   end
 
   def create
-    @request = Request.new(
-      trip_style: params[:trip_style],
-      passport: params[:passport],
-    )
+    @request = Request.find_by(id:
+      [:trip_style])
+      passport: params[:passport]
     @request.save
     render "show.json.jb"
   end
