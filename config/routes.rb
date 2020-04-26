@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   namespace :api do
     get "/styles" => "styles#index"
     get "/styles/:id" => "styles#show"
-    get "/styles/:id" => "styles#update"
+    # get "/styles/:id" => "styles#update"
   end
 end

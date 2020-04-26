@@ -1,14 +1,12 @@
 class Api::StylesController < ApplicationController
   def index
-    @styles = Styles.all
-    # if current_user
+    @styles = Style.all
     render "index.json.jb"
   end
 
-  consider removing render
-
   def show
-    @style = Style.find_by(id: params[:id])
+    @style = Style.find_by(trip_name: params[:trip_name])
+
     render "show.json.jb"
   end
 end
