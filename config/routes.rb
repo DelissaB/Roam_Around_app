@@ -9,11 +9,18 @@ Rails.application.routes.draw do
     post "/requests" => "requests#create"
     get "/requests/:id" => "requests#show"
     delete "/requests/:id" => "requests#destroy"
+
+    post "/users" => "users#create"
+
+    post "/sessions" => "sessions#create"
   end
 
   namespace :api do
     get "/styles" => "styles#index"
     get "/styles/:id" => "styles#show"
-    # get "/styles/:id" => "styles#update"
+  end
+
+  namespace :api do
+    get "/locations/:id" => "locations#show"
   end
 end

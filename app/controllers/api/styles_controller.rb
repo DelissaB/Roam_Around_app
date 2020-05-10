@@ -5,8 +5,7 @@ class Api::StylesController < ApplicationController
   end
 
   def show
-    @style = Style.find_by(trip_name: params[:trip_name])
-
+    @style = Style.find_by(id: params[:id])
     render "show.json.jb"
   end
 end

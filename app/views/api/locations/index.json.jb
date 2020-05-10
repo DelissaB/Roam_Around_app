@@ -1,0 +1,7 @@
+@locations.map do |location|
+{
+  name: location.name,
+  intro: location.intro,
+  sightseeing_score: location.sightseeing_score,
+  image: location.image,
+}

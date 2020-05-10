@@ -1,5 +1,6 @@
 @styles.map do |style|
   {
-    trip_name: @style.trip_name,
+    id: style.id,
+    trip_name: style.trip_name,
   }
 end

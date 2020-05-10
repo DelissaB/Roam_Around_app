@@ -1,16 +1,19 @@
 class Style < ApplicationRecord
-  belongs_to :user
-  belongs_to :requests
+  # belongs_to :user
+  # has_many :locations, through: style_locations
+  # has_many :locations, through: style_locations
 
-  def initialize(trip_name)
-    @trip_name = trip_name
-  end
+  validates :trip_name, presence: true
 
-  def trip_name
-    @trip_name
-  end
+  #   def initialize(trip_name)
+  #     @trip_name = trip_name
+  #   end
 
-    # def requests
-    #   Request.where(trip_name: id)
-  end
+  #   def trip_name
+  #     @trip_name
+  #   end
+
+  #   def requests
+  #     Request.where(trip_name: id)
+  #   end
 end

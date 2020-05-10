@@ -1,6 +1,4 @@
 {
-  id: @request.id,
-  trip_style: @request.trip_style,
-  passport: @request.passport,
-# location: @request.location,
+  user_id: @request.user_id,
+  style_id: @request.style_id,
 }

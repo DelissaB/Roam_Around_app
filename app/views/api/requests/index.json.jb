@@ -1,7 +1,6 @@
 @requests.map do |request|
   {
-    id: request.id,
-    trip_style: request.trip_style,
-    passport: request.passport,
+    user_id: @request.user_id,
+    style_id: @request.style_id,
   }
 end
