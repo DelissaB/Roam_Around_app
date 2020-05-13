@@ -1,7 +1,7 @@
 class Style < ApplicationRecord
   # belongs_to :user
-  # has_many :locations, through: style_locations
-  # has_many :locations, through: style_locations
+  has_many :style_locations
+  has_many :locations, through: :style_locations
 
   validates :trip_name, presence: true
 

@@ -6,21 +6,17 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "/requests" => "requests#index"
-    post "/requests" => "requests#create"
-    get "/requests/:id" => "requests#show"
-    delete "/requests/:id" => "requests#destroy"
+    # post "/requests" => "requests#create"
+    # get "/requests/:id" => "requests#show"
+    # delete "/requests/:id" => "requests#destroy"
+
+    get "/styles" => "styles#index"
+    # get "/styles/:id" => "styles#show"
+
+    get "/locations" => "locations#index"
 
     post "/users" => "users#create"
 
     post "/sessions" => "sessions#create"
-  end
-
-  namespace :api do
-    get "/styles" => "styles#index"
-    get "/styles/:id" => "styles#show"
-  end
-
-  namespace :api do
-    get "/locations/:id" => "locations#show"
   end
 end

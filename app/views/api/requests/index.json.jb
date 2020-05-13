@@ -1,6 +1,6 @@
-@requests.map do |request|
+@requests.map do |my_request|
   {
-    user_id: @request.user_id,
-    style_id: @request.style_id,
+    user_id: my_request.user_id,
+    style_id: my_request.style_id,
   }
 end

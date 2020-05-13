@@ -1,6 +1,11 @@
 class Api::LocationsController < ApplicationController
-  def show
-    @locations = Request.find_by(id: params[:id])
-    render "show.json.jb"
+  def index
+    if params[:style_id] != "undefined"
+      style = Style.find_by(id: params[:style_id])
+      @locations = style.locations
+    else
+      @locations = Location.all
+    end
+    render "index.json.jb"
   end
 end
