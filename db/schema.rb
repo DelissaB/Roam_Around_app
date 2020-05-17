@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_191334) do
+ActiveRecord::Schema.define(version: 2020_05_17_203103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_191334) do
     t.float "nightlife_score"
     t.string "images"
     t.string "Kid_friendly_score"
+    t.string "source_url"
   end
 
   create_table "requests", force: :cascade do |t|
