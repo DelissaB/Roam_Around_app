@@ -12,9 +12,9 @@ require "http"
 # #Girlfriend Getaway
 # # https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|shopping&count=50&fields=intro,id,tag_labels,country_id&account=DIZGDG1D&token= (Original code)
 
-# https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|poitype-Shopping_centre&type=city&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=7vx3x52tkuh2jlaa2z7ybk5cqz3iiphy     (updated with images)
+# https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|poitype-Shopping_centre&type=city&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=     (updated with images)
 
-# response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|poitype-Shopping_centre&type=city&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=7vx3x52tkuh2jlaa2z7ybk5cqz3iiphy")
+# response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|poitype-Shopping_centre&type=city&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=")
 
 # response.parse["results"].each do |result|
 #   location = Location.create(
@@ -52,9 +52,9 @@ require "http"
 # # Couples_trip
 # response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=nightlife|sightseeing|beaches|dancing&count=50&fields=intro,id,tag_labels,country_id&account=DIZGDG1D&token=")  (original)
 
-# https://www.triposo.com/api/20200405/location.json?child_tag_labels=nightlife|sightseeing|dancing|district_beach&score=>=9&type=city&order_by=score&count=50&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=7vx3x52tkuh2jlaa2z7ybk5cqz3iiphy (updated with images)
+# https://www.triposo.com/api/20200405/location.json?child_tag_labels=nightlife|sightseeing|dancing|district_beach&score=>=9&type=city&order_by=score&count=50&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token= (updated with images)
 
-# response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=nightlife|sightseeing|dancing|district_beach&score=>=9&type=city&order_by=score&count=50&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=7vx3x52tkuh2jlaa2z7ybk5cqz3iiphy")
+# response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=nightlife|sightseeing|dancing|district_beach&score=>=9&type=city&order_by=score&count=50&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=")
 
 # response.parse["results"].each do |result|
 #   location = Location.create(
@@ -89,11 +89,11 @@ require "http"
 # end
 
 # # # # Traveling_with_kids
-# # # response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=character-Kid_friendly|amusementparks|sightseeing&order_by=score&count=50&fields=intro,id,tag_labels,country_id&account=DIZGDG1D&token=7vx3x52tkuh2jlaa2z7ybk5cqz3iiphy") (original)
+# # # response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=character-Kid_friendly|amusementparks|sightseeing&order_by=score&count=50&fields=intro,id,tag_labels,country_id&account=DIZGDG1D&token=") (original)
 
 # # # https://www.triposo.com/api/20200405/location.json?child_tag_labels=character-Kid_friendly&score=>=8&order_by=score&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=7vx3x52tkuh2jlaa2z7ybk5cqz3iiphy (updated with images)
 
-response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=character-Kid_friendly&score=>=8&order_by=score&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=7vx3x52tkuh2jlaa2z7ybk5cqz3iiphy")
+response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=character-Kid_friendly&score=>=8&order_by=score&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=")
 
 response.parse["results"].each do |result|
   location = Location.create(
