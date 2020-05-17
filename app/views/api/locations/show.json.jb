@@ -1,6 +1,14 @@
 {
+  # id: @location.id
   name: @location.name,
   intro: @location.intro,
+  country_id: @location.country_id,
+  snippet_language_info: @location.snippet_language_info,
+  wineries_score: @location.wineries_score,
+  Shopping_centre_score: @location.Shopping_centre_score,
   sightseeing_score: @location.sightseeing_score,
-  image: @location.image,
+  images: @location.images,
+  score: @location.score,
+  climate: @location.climate,
+  Kid_friendly_score: @location.Kid_friendly_score,
 }
