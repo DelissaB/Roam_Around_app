@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "http"
-# Location.destroy_all
-# StyleLocation.destroy_all
+Location.destroy_all
+StyleLocation.destroy_all
 
 # #Girlfriend Getaway
 # # https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|shopping&count=50&fields=intro,id,tag_labels,country_id&account=DIZGDG1D&token= (Original code)
@@ -26,7 +26,7 @@ response.parse["results"].each do |result|
     snippet_language_info: result["snippet_language_info"],
     wineries_score: result["wineries_score"],
     Shopping_centre_score: result["poitype-Shopping_centre"],
-    images: result["images"][0]["source_url"],
+    images: result["images"][1]["source_url"],
     score: result["score"],
     climate: result["climate"],
   )
@@ -43,7 +43,7 @@ response.parse["results"].each do |result|
   p result["wineries_score"]
   p result["sightseeing_score"]
   p result["poitype-Shopping_centre"]
-  p result["images"][0]["source_url"]
+  p result["images"][1]["source_url"]
   p result["score"]
   p result["climate"]
   # break
@@ -66,7 +66,7 @@ response.parse["results"].each do |result|
     dancing_score: result["dancing_score"],
     snippet_language_info: result["snippet_language_info"],
     nightlife_score: result["nightlife_score"],
-    images: result["images"][0]["source_url"],
+    images: result["images"][1]["source_url"],
     climate: result["climate"],
     score: result["score"],
   )
@@ -82,7 +82,7 @@ response.parse["results"].each do |result|
   p result["dancing_score"]
   p result["snippet_language_info"]
   p result["nightlife_score"]
-  p result["images"][0]["source_url"]
+  p result["images"][1]["source_url"]
   p result["climate"]
   p result["score"]
   # break
@@ -103,7 +103,7 @@ response.parse["results"].each do |result|
     # amusementparks_score: result["amusementparks_score"],
     snippet_language_info: result["snippet_language_info"],
     Kid_friendly_score: result["character-Kid_friendly_score"],
-    images: ["images"][0]["source_url"],
+    images: result["images"][1]["source_url"],
     climate: result["climate"],
     score: result["score"],
   )
@@ -116,7 +116,7 @@ response.parse["results"].each do |result|
   p result["sightseeing_score"]
   p result["amusementparks_score"]
   p result["character-Kid_friendly_score"]
-  p result["images"][0]["source_url"]
+  p result["images"][1]["source_url"]
   p result["climate"]
   p result["score"]
 end
