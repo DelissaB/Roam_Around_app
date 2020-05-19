@@ -5,16 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require "http"
-Location.destroy_all
-StyleLocation.destroy_all
+# require "http"
+# Location.destroy_all
+# StyleLocation.destroy_all
 
 # #Girlfriend Getaway
 # # https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|shopping&count=50&fields=intro,id,tag_labels,country_id&account=DIZGDG1D&token= (Original code)
 
 # https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|poitype-Shopping_centre&type=city&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=     (updated with images)
 
-response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|poitype-Shopping_centre&type=city&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=")
+response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=wineries|sightseeing|poitype-Shopping_centre&type=city&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=xizczrl4v0z5jj1ylc86ws4otecc5v13")
 
 response.parse["results"].each do |result|
   location = Location.create(
@@ -54,7 +54,7 @@ end
 
 # https://www.triposo.com/api/20200405/location.json?child_tag_labels=nightlife|sightseeing|dancing|district_beach&score=>=9&type=city&order_by=score&count=50&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token= (updated with images)
 
-response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=nightlife|sightseeing|dancing|district_beach&score=>=9&type=city&order_by=score&count=50&fields=id,name,intro,images,country_id,snippet_language_info,climate,score&account=DIZGDG1D&token=")
+response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=nightlife|sightseeing|dancing|district_beach&score=>=9&type=city&order_by=score&count=50&fields=id,name,intro,images,country_id,snippet_language_info,climate,score&account=DIZGDG1D&token=xizczrl4v0z5jj1ylc86ws4otecc5v13")
 
 response.parse["results"].each do |result|
   location = Location.create(
@@ -74,7 +74,7 @@ response.parse["results"].each do |result|
     style_id: 2,
     location_id: location.id,
   )
-  # p result["id"]
+  p result["id"]
   p result["name"]
   p result["intro"]
   p result["sightseeing_score"]
@@ -85,15 +85,15 @@ response.parse["results"].each do |result|
   p result["images"][1]["source_url"]
   p result["climate"]
   p result["score"]
-  # break
+  break
 end
 
-# # # # Traveling_with_kids
+# Traveling_with_kids
 # # # response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=character-Kid_friendly|amusementparks|sightseeing&order_by=score&count=50&fields=intro,id,tag_labels,country_id&account=DIZGDG1D&token=") (original)
 
 # # # https://www.triposo.com/api/20200405/location.json?child_tag_labels=character-Kid_friendly&score=>=8&order_by=score&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=hy (updated with images)
 
-response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=character-Kid_friendly&score=>=8&order_by=score&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=")
+response = HTTP.get("https://www.triposo.com/api/20200405/location.json?child_tag_labels=character-Kid_friendly&score=>=8&order_by=score&fields=id,name,intro,country_id,snippet_language_info,climate,score,images&account=DIZGDG1D&token=xizczrl4v0z5jj1ylc86ws4otecc5v13")
 
 response.parse["results"].each do |result|
   location = Location.create(
@@ -111,7 +111,7 @@ response.parse["results"].each do |result|
     style_id: 3,
     location_id: location.id,
   )
-  # p result["id"]
+
   p result["intro"]
   p result["sightseeing_score"]
   p result["amusementparks_score"]
@@ -121,18 +121,18 @@ response.parse["results"].each do |result|
   p result["score"]
 end
 
-# # # # Original way written- example to note name and id correlation
-# # # # name: result["id"],
-# # # #     intro: result["intro"],
-# # # #     sightseeing_score: result["sightseeing_score"],
-# # # #     amusementparks_score: result["amusementparks_score"],
-# # # #   )
-# # # #   StyleLocation.create(
-# # # #     style_id: 3,
-# # # #     location_id: location.id,
-# # # #   )
-# # # #   p result["id"]
-# # # #   p result["intro"]
-# # # #   p result["sightseeing_score"]
-# # # #   p result["amusementparks_score"]
-# # # #   # p result["character-Kid_friendly_score"]
+# #  Original way written- example to note name and id correlation
+# #  name: result["id"],
+# #      intro: result["intro"],
+# #      sightseeing_score: result["sightseeing_score"],
+# #      amusementparks_score: result["amusementparks_score"],
+# #    )
+# #    StyleLocation.create(
+# #      style_id: 3,
+# #      location_id: location.id,
+# #    )
+# #    p result["id"]
+# #    p result["intro"]
+# #    p result["sightseeing_score"]
+# #    p result["amusementparks_score"]
+# #    # p result["character-Kid_friendly_score"]

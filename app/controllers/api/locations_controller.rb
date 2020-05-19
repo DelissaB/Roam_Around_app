@@ -8,4 +8,8 @@ class Api::LocationsController < ApplicationController
     end
     render "index.json.jb"
   end
+
+  def show
+    Location.find(User.pluck(:id).sample)
+  end
 end

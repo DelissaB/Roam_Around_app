@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_203103) do
+ActiveRecord::Schema.define(version: 2020_05_19_003821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 2020_05_17_203103) do
     t.string "images"
     t.string "Kid_friendly_score"
     t.string "source_url"
+  end
+
+  create_table "picks", force: :cascade do |t|
+    t.string "name"
+    t.string "intro"
+    t.float "sightseeing_score"
+    t.string "images"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "requests", force: :cascade do |t|
