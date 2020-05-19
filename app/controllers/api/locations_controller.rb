@@ -10,6 +10,6 @@ class Api::LocationsController < ApplicationController
   end
 
   def show
-    Location.find(User.pluck(:id).sample)
+    # Location.find(User.pluck(:id).sample)
   end
 end
