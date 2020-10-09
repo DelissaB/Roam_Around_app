@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2020_05_19_003821) do
     t.float "nightlife_score"
     t.string "images"
     t.string "Kid_friendly_score"
-    t.string "source_url"
   end
 
   create_table "picks", force: :cascade do |t|
